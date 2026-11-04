@@ -1,0 +1,1239 @@
+{
+  "display": {
+    "maxPixelRatio": 2
+  },
+  "world": {
+    "viewHeight": 1000,
+    "minViewWidth": 720,
+    "cameraY": 500,
+    "ceilingY": 110,
+    "netY": 880,
+    "netSag": 60,
+    "netSagWidth": 160,
+    "netSagRecover": 4,
+    "netMesh": 40,
+    "netMeshWidth": 1,
+    "netMeshAlpha": 0.35,
+    "cameraLeadFly": 220,
+    "cameraLeadSwing": 260,
+    "cameraLerp": 5,
+    "cameraMinEdge": 0.18,
+    "spawnAhead": 1800,
+    "cullBehind": 900,
+    "maxFrameDt": 0.05,
+    "restartDelay": 0.35
+  },
+  "physics": {
+    "gravity": 1100,
+    "fixedStep": 0.004166667,
+    "maxSubsteps": 16,
+    "fallDrag": 0.8,
+    "netBounce": 0.35,
+    "netSettleSpeed": 60
+  },
+  "swing": {
+    "ropeLength": 230,
+    "swingSpeed": 1.0,
+    "amplitude": 0.95,
+    "pump": 0.9,
+    "catchMomentum": 0.85,
+    "maxAngVelFactor": 1.25
+  },
+  "launch": {
+    "speed": 640,
+    "boost": 1.0,
+    "power_back": 0.3,
+    "power_bottom": 0.65,
+    "power_front": 1.0,
+    "angle_back": 25,
+    "angle_bottom": 35,
+    "angle_front": 55,
+    "angle_min": 15,
+    "angle_max": 60,
+    "peakGrace": 0.15
+  },
+  "catch": {
+    "radius": 46,
+    "perfectRadius": 14,
+    "fallMargin": 70
+  },
+  "bars": {
+    "width": 56,
+    "thickness": 7,
+    "anchorRadius": 5,
+    "ropeWidth": 3,
+    "idleAmplitude": 0.1,
+    "idlePump": 0.6,
+    "brokenGravity": 1400
+  },
+  "generator": {
+    "firstBarOffset": 260,
+    "easyCount": 5,
+    "easyGap": 360,
+    "gapStart": 380,
+    "gapGrowthPerBar": 3,
+    "gapMax": 500,
+    "minGap": 320,
+    "gapJitter": 25,
+    "heightJitter": 45,
+    "anchorMinY": 70,
+    "anchorMaxY": 170,
+    "swingSpeedGrowthPerBar": 0.004,
+    "swingSpeedMax": 1.3,
+    "reachSafety": 0.86,
+    "planSteps": 48,
+    "planDt": 0.008333,
+    "planMaxTime": 3,
+    "obstacleStartBar": 15,
+    "obstacleChance": 0.5,
+    "obstacleWeights": {
+      "rail": 1,
+      "fragile": 1,
+      "hoop": 1,
+      "sandbag": 1
+    },
+    "starChance": 0.5,
+    "starMin": 1,
+    "starMax": 3,
+    "starPathFrom": 0.3,
+    "starPathTo": 0.7,
+    "hoopPathAt": 0.5,
+    "sandbagPathAt": 0.5
+  },
+  "obstacles": {
+    "rail": {
+      "range": 70,
+      "speed": 1.3,
+      "reachShare": 0.5
+    },
+    "fragile": {
+      "snapTime": 2.0,
+      "flashRateStart": 3,
+      "flashRateEnd": 16,
+      "brokenRopeShare": 0.3
+    },
+    "hoop": {
+      "radius": 72,
+      "rimRadius": 9,
+      "drawWidth": 26,
+      "flameCount": 14,
+      "flameSize": 7,
+      "flameFlicker": 9,
+      "flameSpread": 0.5,
+      "flamePhaseStep": 2.4,
+      "flameAlpha": 0.9
+    },
+    "sandbag": {
+      "radius": 24,
+      "amplitude": 0.5,
+      "speed": 0.9,
+      "pathDrop": 0,
+      "shineOffset": 0.35,
+      "shineSize": 0.3,
+      "shineAlpha": 0.5
+    }
+  },
+  "stars": {
+    "radius": 14,
+    "innerRatio": 0.45,
+    "spin": 1.5,
+    "bobAmount": 6,
+    "bobSpeed": 3
+  },
+  "score": {
+    "catch": 1,
+    "nearMiss": 2,
+    "star": 5,
+    "hoop": 3,
+    "maxMultiplier": 16,
+    "nearMissDistance": 30,
+    "saveKey": "swing-and-let-go.best"
+  },
+  "acrobat": {
+    "handHalf": 9,
+    "shoulderHalf": 7,
+    "armLength": 30,
+    "torsoLength": 34,
+    "thighLength": 21,
+    "shinLength": 21,
+    "headRadius": 10,
+    "headLift": 9,
+    "bodyCenterOffset": 46,
+    "bodyRadius": 20,
+    "limbWidth": 5,
+    "torsoWidth": 9,
+    "outlineWidth": 3,
+    "poseLerp": 12,
+    "angVelRef": 2.2,
+    "legForward": 1.2,
+    "kneeThigh": 0.35,
+    "kneeBend": 1.6,
+    "legSplit": 0.12,
+    "tuckThigh": 2.3,
+    "tuckKnee": 2.6,
+    "tuckIn": 14,
+    "openDistance": 120,
+    "uprightLerp": 10,
+    "flailFreq": 16,
+    "flailArmBase": 2.3,
+    "flailArmAmp": 0.7,
+    "flailLegAmp": 0.6,
+    "landedAngle": 1.5708,
+    "landedFlail": 0.5,
+    "swingOrientLerp": 20,
+    "tuckShoulderPull": 0.5,
+    "tuckHeadForward": 0.6,
+    "tuckHugShin": 0.5,
+    "flailKneeRate": 1.3
+  },
+  "juice": {
+    "shakeMs": 380,
+    "shakeIntensity": 0.012,
+    "hitShakeMs": 200,
+    "hitShakeIntensity": 0.006,
+    "netDipSpeed": 900,
+    "freeze": 0.06,
+    "slowmoScale": 0.3,
+    "slowmoTime": 0.5,
+    "trailLength": 16,
+    "trailEvery": 0.016,
+    "trailRadius": 14,
+    "burstCount": 16,
+    "burstSpeed": 360,
+    "burstLife": 0.7,
+    "burstSize": 9,
+    "burstJitter": 0.4,
+    "particleSpin": 6,
+    "sparkCount": 8,
+    "sparkSpeed": 180,
+    "sparkLife": 0.35,
+    "particleGravity": 500,
+    "popupRise": 60,
+    "popupSize": 28,
+    "popupStroke": 6,
+    "trailAlpha": 0.45,
+    "popupTime": 0.8,
+    "comboPopScale": 1.8,
+    "comboPopMs": 260,
+    "comboBaseSize": 34,
+    "comboGrowPerLevel": 7
+  },
+  "audio": {
+    "masterVolume": 0.5,
+    "attackShare": 0.1,
+    "whoosh": {
+      "duration": 0.28,
+      "freqFrom": 400,
+      "freqTo": 1800,
+      "q": 1.2,
+      "volume": 0.5
+    },
+    "click": {
+      "duration": 0.05,
+      "freq": 1700,
+      "volume": 0.35
+    },
+    "chime": {
+      "baseFreq": 660,
+      "semitonesPerLevel": 3,
+      "noteGap": 0.07,
+      "duration": 0.4,
+      "volume": 0.3,
+      "intervals": [
+        0,
+        4,
+        7,
+        12
+      ]
+    },
+    "sparkle": {
+      "freq": 1320,
+      "duration": 0.18,
+      "volume": 0.2
+    },
+    "thud": {
+      "duration": 0.35,
+      "freqFrom": 120,
+      "freqTo": 40,
+      "volume": 0.8,
+      "noiseVolume": 0.3,
+      "noiseCutoff": 480
+    },
+    "boing": {
+      "duration": 0.6,
+      "freqFrom": 520,
+      "freqTo": 110,
+      "wobbleRate": 14,
+      "wobbleDepth": 40,
+      "volume": 0.4
+    },
+    "heartbeat": {
+      "freq": 58,
+      "duration": 0.13,
+      "gap": 0.16,
+      "volume": 0.7,
+      "secondBeat": 0.7,
+      "pitchStep": 0.15,
+      "dropTo": 0.6
+    },
+    "rumble": {
+      "duration": 1.3,
+      "cutoff": 150,
+      "volume": 0.8
+    }
+  },
+  "background": {
+    "spotlights": 4,
+    "spotSpacing": 520,
+    "spotRadius": 220,
+    "spotRings": 6,
+    "spotAlpha": 0.05,
+    "spotParallax": 0.25,
+    "spotDrift": 0.35,
+    "spotDriftAmount": 40,
+    "spotY": 0.3,
+    "spotYJitter": 0.12,
+    "spotPhaseStep": 2,
+    "bandCount": 7,
+    "bandAlpha": 0.18
+  },
+  "colors": {
+    "background": "#1E2A6B",
+    "backgroundDeep": "#141B4A",
+    "purple": "#3B1F6B",
+    "spotlight": "#FFF4D6",
+    "outline": "#1A1030",
+    "stripeRed": "#C8283E",
+    "stripeCream": "#F5E8CC",
+    "gold": "#F5B93D",
+    "rope": "#D9C6A0",
+    "ropeFragile": "#E8936B",
+    "ropeFlash": "#FF4D2E",
+    "teal": "#2EC4B6",
+    "hazard": "#FF4D2E",
+    "flame": "#FFB347",
+    "star": "#FFE066",
+    "skin": "#F5E8CC",
+    "net": "#F5E8CC",
+    "floor": "#0E1238",
+    "text": "#FFF4D6"
+  },
+  "ui": {
+    "font": "\"Trebuchet MS\", \"Arial Rounded MT Bold\", system-ui, sans-serif",
+    "scoreSize": 56,
+    "bestSize": 20,
+    "messageSize": 30,
+    "titleSize": 54,
+    "margin": 18,
+    "stroke": 8,
+    "panelAlpha": 0.82,
+    "panelWidth": 320,
+    "panelHeight": 260,
+    "panelRadius": 24,
+    "hintPulse": 3,
+    "hintPulseAmount": 0.06,
+    "readyTitleY": 0.3,
+    "readyHintY": 0.42,
+    "overTitleOffset": 0.3,
+    "overTextOffset": 0.1
+  },
+  "platform": {
+    "width": 120,
+    "deckHeight": 26,
+    "stripeWidth": 15,
+    "poleWidth": 16
+  },
+  "debug": {
+    "showArc": false,
+    "arcDt": 0.03,
+    "arcMaxTime": 1.6,
+    "arcDotRadius": 3,
+    "arcAlpha": 0.7,
+    "powerBarWidth": 54,
+    "powerBarHeight": 7,
+    "powerBarOffset": 22,
+    "powerBarStrongAt": 0.9,
+    "sliders": [
+      {
+        "label": "Gravity",
+        "path": "physics.gravity",
+        "min": 400,
+        "max": 2400,
+        "step": 10
+      },
+      {
+        "label": "Rope length",
+        "path": "swing.ropeLength",
+        "min": 120,
+        "max": 360,
+        "step": 1
+      },
+      {
+        "label": "Swing speed",
+        "path": "swing.swingSpeed",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.01
+      },
+      {
+        "label": "Launch boost",
+        "path": "launch.boost",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.01
+      },
+      {
+        "label": "Catch radius",
+        "path": "catch.radius",
+        "min": 15,
+        "max": 120,
+        "step": 1
+      },
+      {
+        "label": "Perfect radius",
+        "path": "catch.perfectRadius",
+        "min": 2,
+        "max": 50,
+        "step": 1
+      }
+    ]
+  },
+  "fixedJump": {
+    "saveKey": "night-circus.fixed-jump.best",
+    "viewHeight": 1000,
+    "minViewWidth": 720,
+    "jumpDistance": 340,
+    "jumpHeight": 90,
+    "firstBarOffset": 260,
+    "gapJitter": 20,
+    "heightJitter": 25,
+    "easyBars": 2,
+    "rampBars": 30,
+    "motionScale": 1,
+    "motionWeights": {
+      "swing": 1,
+      "slide": 1,
+      "bob": 1
+    },
+    "swingAmpStart": 0.12,
+    "swingAmpMax": 0.4,
+    "slideRangeStart": 30,
+    "slideRangeMax": 110,
+    "slideSpeedStart": 0.9,
+    "slideSpeedMax": 2.0,
+    "bobRangeStart": 20,
+    "bobRangeMax": 60,
+    "bobSpeedStart": 1.0,
+    "bobSpeedMax": 2.2,
+    "cameraLead": 220,
+    "arcGuideBars": 10,
+    "arcDotStep": 0.035,
+    "arcOvershoot": 1.25,
+    "arcDotRadius": 3,
+    "arcAlpha": 0.35,
+    "sliders": [
+      {
+        "label": "Jump distance",
+        "path": "fixedJump.jumpDistance",
+        "min": 200,
+        "max": 500,
+        "step": 1
+      },
+      {
+        "label": "Jump height",
+        "path": "fixedJump.jumpHeight",
+        "min": 20,
+        "max": 250,
+        "step": 1
+      },
+      {
+        "label": "Swing speed",
+        "path": "swing.swingSpeed",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.01
+      },
+      {
+        "label": "Bar motion (new bars)",
+        "path": "fixedJump.motionScale",
+        "min": 0,
+        "max": 2,
+        "step": 0.05
+      },
+      {
+        "label": "Catch radius",
+        "path": "catch.radius",
+        "min": 15,
+        "max": 120,
+        "step": 1
+      },
+      {
+        "label": "Perfect radius",
+        "path": "catch.perfectRadius",
+        "min": 2,
+        "max": 50,
+        "step": 1
+      }
+    ]
+  },
+  "pyramid": {
+    "saveKey": "night-circus.pyramid.best",
+    "viewHeight": 1000,
+    "minViewWidth": 560,
+    "pedestalHeight": 60,
+    "clearance": 40,
+    "swingAmplitude": 0.55,
+    "swingInSide": 1,
+    "speedGrowth": 0.03,
+    "speedMax": 1.8,
+    "riseRate": 4,
+    "cameraTopOffset": -150,
+    "perfectPx": 5,
+    "toppleOverhang": 24,
+    "swayPerPx": 4,
+    "swayStiffness": 6,
+    "swayDamping": 0.9,
+    "maxSwayPx": 45,
+    "steadyFactor": 0.3,
+    "respawnDelay": 0.4,
+    "toppleStart": 0.03,
+    "toppleAccel": 3,
+    "toppleMaxAngle": 1.45,
+    "fallKnee": 0.3,
+    "sliders": [
+      {
+        "label": "Gravity",
+        "path": "physics.gravity",
+        "min": 400,
+        "max": 2400,
+        "step": 10
+      },
+      {
+        "label": "Swing speed",
+        "path": "swing.swingSpeed",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.01
+      },
+      {
+        "label": "Speed growth / acrobat",
+        "path": "pyramid.speedGrowth",
+        "min": 0,
+        "max": 0.1,
+        "step": 0.005
+      },
+      {
+        "label": "Perfect (px)",
+        "path": "pyramid.perfectPx",
+        "min": 1,
+        "max": 20,
+        "step": 1
+      },
+      {
+        "label": "Topple overhang (px)",
+        "path": "pyramid.toppleOverhang",
+        "min": 8,
+        "max": 60,
+        "step": 1
+      },
+      {
+        "label": "Sway per px",
+        "path": "pyramid.swayPerPx",
+        "min": 0,
+        "max": 15,
+        "step": 0.5
+      },
+      {
+        "label": "Max sway (px)",
+        "path": "pyramid.maxSwayPx",
+        "min": 10,
+        "max": 120,
+        "step": 1
+      }
+    ]
+  },
+  "flips": {
+    "saveKey": "night-circus.flips.best",
+    "viewHeight": 900,
+    "minViewWidth": 520,
+    "cameraY": -200,
+    "bounceHeight": 380,
+    "spinRate": 12,
+    "landTolerance": 25,
+    "perfectTolerance": 8,
+    "flipNames": [
+      "FLIP",
+      "DOUBLE",
+      "TRIPLE",
+      "QUAD",
+      "MEGA"
+    ],
+    "floorY": 120,
+    "crashRestOffset": 20,
+    "crashVx": 260,
+    "crashBounce": 520,
+    "crashSpin": 9,
+    "bedRecover": 8,
+    "bedSag": 30,
+    "bedWidth": 260,
+    "bedWidthLine": 6,
+    "legWidth": 8,
+    "legSplay": 30,
+    "stripeWidth": 20,
+    "frameTop": 0,
+    "frameHeight": 16,
+    "airKnee": 0.3,
+    "flipPopupOffset": 90,
+    "dialRadius": 26,
+    "dialX": 210,
+    "dialY": -300,
+    "dialAlpha": 0.6,
+    "dialNeedle": 4,
+    "sliders": [
+      {
+        "label": "Gravity",
+        "path": "physics.gravity",
+        "min": 400,
+        "max": 2400,
+        "step": 10
+      },
+      {
+        "label": "Bounce height",
+        "path": "flips.bounceHeight",
+        "min": 150,
+        "max": 600,
+        "step": 5
+      },
+      {
+        "label": "Spin rate (rad/s)",
+        "path": "flips.spinRate",
+        "min": 4,
+        "max": 24,
+        "step": 0.5
+      },
+      {
+        "label": "Land tolerance (deg)",
+        "path": "flips.landTolerance",
+        "min": 5,
+        "max": 60,
+        "step": 1
+      },
+      {
+        "label": "Perfect tolerance (deg)",
+        "path": "flips.perfectTolerance",
+        "min": 1,
+        "max": 25,
+        "step": 1
+      }
+    ]
+  },
+  "game": {
+    "saveKey": "night-circus.best",
+    "viewHeight": 1000,
+    "minViewWidth": 720,
+    "jumpDistance": 340,
+    "jumpHeight": 90,
+    "holdAmplitude": 0.17,
+    "holdSwingSpeed": 1.5,
+    "firstBarOffset": 260,
+    "barHeightJitter": 20,
+    "cameraLead": 220,
+    "arcGuideBars": 10,
+    "arcDotStep": 0.035,
+    "arcPreviewTime": 2.4,
+    "arcDotRadius": 3,
+    "arcAlpha": 0.35,
+    "arcAlphaSpecial": 0.65,
+    "bodyHitRadius": 18,
+    "rainSlipTime": 1.2,
+    "playFrequency": 0.6,
+    "playDifficultyRamp": 45,
+    "easySegments": 2,
+    "areaChance": 0.12,
+    "hazardChance": 0.5,
+    "collectChance": 0.45,
+    "grabChance": 0.55,
+    "tryCount": 5,
+    "tryLevelFrom": 0.2,
+    "tryLevelTo": 1.0,
+    "tryLeadBars": 1,
+    "zoneAlpha": 0.45,
+    "zoneLineWidth": 2,
+    "respawnPause": 0.4,
+    "infoCardMs": 0,
+    "mirrorFlashMs": 120,
+    "fallMargin": 70,
+    "sliders": [
+      {
+        "label": "Jump distance",
+        "path": "game.jumpDistance",
+        "min": 200,
+        "max": 500,
+        "step": 1
+      },
+      {
+        "label": "Jump height",
+        "path": "game.jumpHeight",
+        "min": 20,
+        "max": 250,
+        "step": 1
+      },
+      {
+        "label": "Swing amplitude",
+        "path": "game.holdAmplitude",
+        "min": 0.2,
+        "max": 1.3,
+        "step": 0.01
+      },
+      {
+        "label": "Swing speed",
+        "path": "swing.swingSpeed",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.01
+      },
+      {
+        "label": "Gravity",
+        "path": "physics.gravity",
+        "min": 400,
+        "max": 2400,
+        "step": 10
+      },
+      {
+        "label": "Catch radius",
+        "path": "catch.radius",
+        "min": 15,
+        "max": 120,
+        "step": 1
+      },
+      {
+        "label": "Perfect radius",
+        "path": "catch.perfectRadius",
+        "min": 2,
+        "max": 50,
+        "step": 1
+      }
+    ]
+  },
+  "fairness": {
+    "arrivals": [
+      0,
+      0.9,
+      1.7,
+      2.6
+    ],
+    "releaseStep": 0.033,
+    "maxWait": 5,
+    "maxFlight": 3.2,
+    "minHits": 2,
+    "timeBase": 3.1,
+    "holdStep": 0.016667,
+    "denseSpan": 3.6,
+    "denseStep": 0.15,
+    "retryPlan": [
+      [
+        1,
+        1
+      ],
+      [
+        1,
+        1.35
+      ],
+      [
+        0.7,
+        1.7
+      ],
+      [
+        0.5,
+        2.2
+      ],
+      [
+        0.3,
+        2.8
+      ]
+    ],
+    "maxCycle": 12,
+    "maxArrivals": 40
+  },
+  "playground": {
+    "invincible": false,
+    "slowMo": false,
+    "alwaysArc": false,
+    "showZones": false,
+    "frequency": 0.6,
+    "difficulty": 0.5,
+    "slowMoScale": 0.5
+  },
+  "objects": {
+    "staticBar": {},
+    "shortBar": {
+      "catchScale": 0.5,
+      "widthScale": 0.5,
+      "points": 2
+    },
+    "swingingBar": {
+      "ampMin": 0.15,
+      "ampMax": 0.5,
+      "speedMin": 0.8,
+      "speedMax": 1.4
+    },
+    "railBar": {
+      "rangeMin": 30,
+      "rangeMax": 110,
+      "speedMin": 0.8,
+      "speedMax": 2.0
+    },
+    "elevatorBar": {
+      "rangeMin": 20,
+      "rangeMax": 70,
+      "speedMin": 0.9,
+      "speedMax": 2.2
+    },
+    "spinningRing": {
+      "radius": 22,
+      "thickness": 6,
+      "gapDeg": 80,
+      "facingDeg": 70,
+      "speedMin": 1.2,
+      "speedMax": 4.0
+    },
+    "fragileBar": {
+      "snapTime": 2.0,
+      "flashRateStart": 3,
+      "flashRateEnd": 16,
+      "brokenRopeShare": 0.3
+    },
+    "slipperyBar": {
+      "slipTime": 1.2,
+      "dripEvery": 0.25
+    },
+    "goldenBar": {
+      "catches": 5,
+      "multiplier": 2,
+      "shimmerRate": 2,
+      "glowScale": 0.7,
+      "glowAlpha": 0.22
+    },
+    "partnerCatcher": {
+      "bodyLength": 96,
+      "ampMin": 0.2,
+      "ampMax": 0.5,
+      "speedMin": 0.8,
+      "speedMax": 1.3
+    },
+    "trampoline": {
+      "width": 120,
+      "drop": 170,
+      "distanceScale": 1.5,
+      "heightScale": 2.2,
+      "frameHeight": 14,
+      "legSplay": 16,
+      "legHeight": 70
+    },
+    "cannon": {
+      "length": 56,
+      "width": 30,
+      "angleA": 35,
+      "angleB": 58,
+      "holdTime": 1.1,
+      "turnTime": 0.45,
+      "power": 640,
+      "baseRadius": 24,
+      "catchRadius": 40,
+      "tickScale": 1.3
+    },
+    "zipline": {
+      "length": 320,
+      "slopeDeg": 14,
+      "speed": 150,
+      "thickness": 3,
+      "exitShare": 0.55,
+      "entryShare": 0.15,
+      "trolleyScale": 1.5
+    },
+    "ferrisWheel": {
+      "radius": 110,
+      "handles": 8,
+      "speedMin": 0.45,
+      "speedMax": 1.0,
+      "placeDeg": 200,
+      "exitDeg": 270,
+      "handleRadius": 7
+    },
+    "balloon": {
+      "riseSpeed": 45,
+      "popTime": 3,
+      "bob": 8,
+      "bobSpeed": 2,
+      "radius": 26,
+      "stringLength": 60,
+      "exitTime": 0.6,
+      "warnShare": 0.35,
+      "shineHeight": 1.3
+    },
+    "fireHoop": {
+      "radius": 70,
+      "rimRadius": 9,
+      "drawWidth": 26,
+      "moveMin": 15,
+      "moveMax": 70,
+      "speedMin": 0.9,
+      "speedMax": 2.0,
+      "pathAt": 0.5,
+      "points": 3,
+      "flameCount": 14,
+      "flameSize": 7,
+      "flameFlicker": 9,
+      "flamePhaseStep": 2.4,
+      "flameAlpha": 0.9
+    },
+    "sandbag": {
+      "radius": 24,
+      "ampMin": 0.55,
+      "ampMax": 0.9,
+      "speedMin": 0.7,
+      "speedMax": 1.1,
+      "pathAt": 0.5,
+      "dropBelow": 70
+    },
+    "knifeWheel": {
+      "radius": 90,
+      "bladesMin": 1,
+      "bladesMax": 2,
+      "speedMin": 3.0,
+      "speedMax": 3.6,
+      "bladeWidth": 8,
+      "pathAt": 0.5,
+      "centerAbove": 1.0,
+      "hubScale": 1.5
+    },
+    "jugglingPins": {
+      "pinRadius": 10,
+      "speedMin": 160,
+      "speedMax": 300,
+      "spacing": 64,
+      "perWaveMin": 2,
+      "perWaveMax": 4,
+      "gapSlots": 2,
+      "pathAt": 0.45,
+      "pinHead": 0.6
+    },
+    "cannonball": {
+      "radius": 20,
+      "speedMin": 700,
+      "speedMax": 1000,
+      "warn": 1.0,
+      "span": 1000,
+      "pathAt": 0.5,
+      "periodEasy": 3.6,
+      "periodHard": 2.6,
+      "warnBlink": 8,
+      "warnSize": 16,
+      "angleDeg": 45
+    },
+    "fallingProp": {
+      "width": 46,
+      "height": 34,
+      "warn": 1.0,
+      "fallSpeed": 900,
+      "topOffset": 160,
+      "onBarChance": 0.5,
+      "pathAt": 0.55,
+      "periodEasy": 3.6,
+      "periodHard": 2.4,
+      "shadowScale": 1.4
+    },
+    "spotlightGlare": {
+      "radius": 120,
+      "durationMin": 1.0,
+      "durationMax": 1.6,
+      "alpha": 0.95,
+      "rays": 10,
+      "periodEasy": 5,
+      "periodHard": 3.2,
+      "rayLength": 1.6
+    },
+    "smoke": {
+      "puffs": 7,
+      "radius": 90,
+      "drift": 40,
+      "alphaMin": 0.55,
+      "alphaMax": 0.85,
+      "span": 520,
+      "rings": 3,
+      "heightShare": 0.6,
+      "puffPhaseStep": 1.7
+    },
+    "confettiBlast": {
+      "pushX": 30,
+      "pushY": -280,
+      "pathAt": 0.4,
+      "arrowLength": 60,
+      "pieces": 18,
+      "coneWidth": 26,
+      "coneHeight": 34,
+      "innerShare": 0.7
+    },
+    "lightning": {
+      "segments": 3,
+      "darkAlpha": 0.94,
+      "flash": 0.22,
+      "cell": 28,
+      "periodEasy": 1.6,
+      "periodHard": 2.6
+    },
+    "star": {
+      "radius": 14,
+      "points": 5,
+      "pathFrom": 0.3,
+      "pathTo": 0.7,
+      "countMin": 1,
+      "countMax": 3
+    },
+    "goldRing": {
+      "radius": 34,
+      "drawWidth": 18,
+      "points": 3,
+      "pathAt": 0.5
+    },
+    "wind": {
+      "accelMin": 80,
+      "accelMax": 220,
+      "segments": 3,
+      "flagSpacing": 140,
+      "flagSize": 18,
+      "flagWave": 6,
+      "flagFlutter": 0.25,
+      "flagLength": 1.6
+    },
+    "rain": {
+      "segments": 3,
+      "drops": 70,
+      "dropLength": 18,
+      "dropSpeed": 900,
+      "alpha": 0.5,
+      "dropScatter": 0.618
+    },
+    "darkness": {
+      "segments": 3,
+      "alpha": 0.94,
+      "spotRadius": 150,
+      "cell": 26
+    },
+    "lowGravity": {
+      "scale": 0.6,
+      "segments": 3,
+      "sparkles": 24,
+      "tintAlpha": 0.12,
+      "sparkleSpeed": 30,
+      "sparkleScatter": 0.37
+    },
+    "mirror": {
+      "segments": 3
+    },
+    "tentCollapse": {
+      "segments": 4,
+      "speedMin": 120,
+      "speedMax": 190,
+      "startBehind": 420,
+      "wallWidth": 60,
+      "stripeWidth": 30,
+      "shadeAlpha": 0.85,
+      "minWait": 0.5,
+      "waitMargin": 0.2
+    }
+  },
+  "catalog": {
+    "staticBar": {
+      "tier": 0,
+      "weight": 1
+    },
+    "star": {
+      "tier": 3,
+      "weight": 1
+    },
+    "swingingBar": {
+      "tier": 4,
+      "weight": 1
+    },
+    "railBar": {
+      "tier": 5,
+      "weight": 1
+    },
+    "elevatorBar": {
+      "tier": 6,
+      "weight": 1
+    },
+    "shortBar": {
+      "tier": 7,
+      "weight": 1
+    },
+    "goldRing": {
+      "tier": 8,
+      "weight": 1
+    },
+    "fireHoop": {
+      "tier": 9,
+      "weight": 1
+    },
+    "sandbag": {
+      "tier": 10,
+      "weight": 1
+    },
+    "goldenBar": {
+      "tier": 11,
+      "weight": 1
+    },
+    "fragileBar": {
+      "tier": 12,
+      "weight": 1
+    },
+    "slipperyBar": {
+      "tier": 13,
+      "weight": 1
+    },
+    "spinningRing": {
+      "tier": 14,
+      "weight": 1
+    },
+    "wind": {
+      "tier": 15,
+      "weight": 1
+    },
+    "partnerCatcher": {
+      "tier": 16,
+      "weight": 1
+    },
+    "trampoline": {
+      "tier": 17,
+      "weight": 1
+    },
+    "cannonball": {
+      "tier": 18,
+      "weight": 1
+    },
+    "zipline": {
+      "tier": 19,
+      "weight": 1
+    },
+    "lowGravity": {
+      "tier": 20,
+      "weight": 1
+    },
+    "ferrisWheel": {
+      "tier": 21,
+      "weight": 1
+    },
+    "knifeWheel": {
+      "tier": 22,
+      "weight": 1
+    },
+    "balloon": {
+      "tier": 23,
+      "weight": 1
+    },
+    "jugglingPins": {
+      "tier": 24,
+      "weight": 1
+    },
+    "cannon": {
+      "tier": 25,
+      "weight": 1
+    },
+    "confettiBlast": {
+      "tier": 26,
+      "weight": 1
+    },
+    "fallingProp": {
+      "tier": 27,
+      "weight": 1
+    },
+    "spotlightGlare": {
+      "tier": 28,
+      "weight": 1
+    },
+    "smoke": {
+      "tier": 29,
+      "weight": 1
+    },
+    "rain": {
+      "tier": 30,
+      "weight": 1
+    },
+    "darkness": {
+      "tier": 31,
+      "weight": 1
+    },
+    "lightning": {
+      "tier": 32,
+      "weight": 1
+    },
+    "mirror": {
+      "tier": 33,
+      "weight": 1
+    }
+  },
+  "shade": {
+    "cellSoftness": 0.35
+  },
+  "pressure": {
+    "mode": "chaser",
+    "startBudget": 2.0,
+    "minBudget": 1.2,
+    "rampBars": 40,
+    "graceBars": 3,
+    "startLead": 2.5,
+    "perfectPush": 0.4,
+    "starPush": 0.2,
+    "warnLead": 2.0,
+    "maxShownLead": 4,
+    "escapeEvery": 5,
+    "escapeShare": 0.5,
+    "escapePoints": 1,
+    "safeWindow": 1.0,
+    "minReaction": 0.2,
+    "ballRadius": 260,
+    "ballStripes": 12,
+    "wobbleTime": 0.5,
+    "wobbleAmount": 0.08,
+    "wobbleRate": 24,
+    "knockVx": 520,
+    "knockVy": -620,
+    "tumbleRate": 14,
+    "arriveShakeMs": 700,
+    "arriveShakeIntensity": 0.01,
+    "heartSlow": 0.95,
+    "heartFast": 0.32,
+    "glowShare": 0.16,
+    "glowSteps": 8,
+    "glowAlpha": 0.6,
+    "barWidth": 170,
+    "barHeight": 10,
+    "barTop": 112,
+    "scrollPushShare": 0.6,
+    "fuseSparkEvery": 0.06,
+    "fuseFlame": 6,
+    "sliders": {
+      "start": [
+        1.0,
+        3.0,
+        0.1
+      ],
+      "min": [
+        0.6,
+        2.0,
+        0.1
+      ],
+      "rampBars": [
+        5,
+        80,
+        1
+      ]
+    },
+    "ballArcSteps": 8,
+    "ballHub": 0.16,
+    "ballShineX": 0.4,
+    "ballShineY": 0.45,
+    "ballShineSize": 0.12
+  }
+}

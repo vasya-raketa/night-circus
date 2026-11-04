@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#1E2A6B" />
+    <title>Night Circus</title>
+    <link rel="icon" href="data:," />
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        overflow: hidden;
+        background: #1E2A6B;
+        color: #FFF4D6;
+        font-family: "Trebuchet MS", system-ui, sans-serif;
+        touch-action: none;
+        user-select: none;
+        -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
+        overscroll-behavior: none;
+      }
+      #game { position: fixed; inset: 0; }
+      #game canvas { display: block; }
+      #ui [hidden] { display: none !important; }
+      .screen { position: fixed; inset: 0; z-index: 6; overflow-y: auto; -webkit-overflow-scrolling: touch; touch-action: pan-y; }
+      .menu { display: grid; place-content: center; gap: 14px; text-align: center; padding: 16px; background: rgba(20, 27, 74, 0.72); }
+      .menu h1 { color: #F5B93D; font-size: clamp(40px, 11vw, 72px); margin: 0; text-shadow: 0 4px 0 #1A1030; }
+      .menu .tagline { margin: 0; color: #D9C6A0; }
+      .menu .best { margin: 4px 0 10px; font-size: 22px; font-weight: bold; }
+      #ui button { background: #3B1F6B; color: #FFF4D6; border: 0; border-radius: 10px; padding: 8px 12px; font: inherit; cursor: pointer; }
+      #ui button.big { font-size: 22px; font-weight: bold; padding: 14px 28px; min-width: min(280px, calc(100vw - 32px)); background: #C8283E; box-shadow: 0 4px 0 #1A1030; }
+      #ui button.big.alt { background: #2EC4B6; color: #1A1030; }
+      .playground { background: #141B4A; padding: 16px; box-sizing: border-box; }
+      .playground header { display: flex; align-items: center; gap: 12px; }
+      .playground h1 { color: #F5B93D; margin: 0; font-size: 28px; }
+      .playground h2 { color: #F5B93D; font-size: 18px; margin: 22px 0 8px; display: flex; align-items: center; gap: 8px; }
+      .playground .settings { background: rgba(59, 31, 107, 0.45); border-radius: 12px; padding: 4px 14px 14px; margin-top: 12px; display: grid; gap: 8px; }
+      .playground .check { display: flex; align-items: center; gap: 8px; }
+      .playground .slider { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; }
+      .playground .slider input { grid-column: 1 / -1; accent-color: #2EC4B6; }
+      .playground input[type=checkbox] { accent-color: #2EC4B6; width: 18px; height: 18px; }
+      .playground .row { display: flex; flex-wrap: wrap; gap: 8px; }
+      .playground .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 10px; }
+      .playground .item { background: rgba(26, 16, 48, 0.75); border-radius: 12px; padding: 10px 12px; display: grid; gap: 6px; }
+      .playground .item p { margin: 0; font-size: 13px; color: #D9C6A0; }
+      .playground .item .score { color: #2EC4B6; }
+      .playground .item-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+      #ui button.try { background: #2EC4B6; color: #1A1030; font-weight: bold; }
+      #ui button.small { padding: 3px 8px; font-size: 12px; }
+      .playground .rates { display: flex; gap: 6px; }
+      #ui button.rate { flex: 1; padding: 5px; font-size: 13px; opacity: 0.6; }
+      #ui button.rate.on { opacity: 1; outline: 2px solid #FFF4D6; }
+      #ui button.rate.keep.on { background: #2E8B57; }
+      #ui button.rate.maybe.on { background: #B8860B; }
+      #ui button.rate.cut.on { background: #C8283E; }
+      .playground .fairness { margin: 22px 0 40px; color: #D9C6A0; }
+      .game-bar { position: fixed; left: 10px; bottom: 10px; z-index: 5; }
+      .info-card { position: fixed; top: 0; left: 0; right: 0; z-index: 5; display: grid; gap: 2px; padding: 8px 14px; background: rgba(26, 16, 48, 0.85); font-size: 13px; text-align: center; }
+      .info-card strong { color: #F5B93D; font-size: 16px; }
+      .info-card em { color: #2EC4B6; font-style: normal; }
+      .copy-box { position: fixed; inset: 0; z-index: 20; display: grid; place-content: center; gap: 10px; padding: 16px; background: rgba(14, 18, 56, 0.92); }
+      .copy-box textarea { width: min(520px, calc(100vw - 32px)); height: 200px; font: 13px monospace; }
+      .debug-panel {
+        position: fixed; top: 8px; left: 8px; z-index: 10;
+        width: min(260px, calc(100vw - 16px));
+        background: rgba(26, 16, 48, 0.88); border-radius: 10px;
+        padding: 8px 10px; font-size: 12px; touch-action: auto;
+      }
+      .debug-header { display: flex; justify-content: space-between; align-items: center; }
+      .debug-panel.collapsed .debug-body { display: none; }
+      .debug-row { display: grid; grid-template-columns: 1fr auto; gap: 2px 8px; margin-top: 8px; }
+      .debug-row input { grid-column: 1 / -1; width: 100%; accent-color: #2EC4B6; }
+      .debug-row output { color: #F5B93D; font-variant-numeric: tabular-nums; }
+      .debug-check { display: flex; align-items: center; gap: 6px; margin-top: 10px; }
+      .debug-check input { accent-color: #2EC4B6; }
+      .debug-actions { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+      .debug-panel button {
+        background: #3B1F6B; color: #FFF4D6; border: 0; border-radius: 6px;
+        padding: 5px 8px; font: inherit; cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game"></div>
+    <div id="ui"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

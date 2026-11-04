@@ -1,0 +1,16 @@
+[
+  {
+    "name": "bg_tent_wide",
+    "type": "background",
+    "aspectRatio": "16:9",
+    "imageSize": "2K",
+    "prompt": "Game BACKGROUND only, landscape. Interior of a magical night circus big top, seen from inside: crimson and cream striped tent canopy at the top edge, deep royal-blue and purple air, soft warm spotlight beams from above, strings of tiny warm lights and small pennant flags, dark audience silhouettes on tiers in the lower third, a dark floor band at the very bottom. Keep the middle area calm and fairly empty (gameplay happens there). NO trapezes, NO bars, NO hoops, NO rings, NO characters, NO safety net, NO text. No outlines (backgrounds have no outline). Muted so gold and red-orange gameplay objects pop on top of it."
+  },
+  {
+    "name": "bg_tent_tall",
+    "type": "background",
+    "aspectRatio": "9:16",
+    "imageSize": "2K",
+    "prompt": "Game BACKGROUND only, portrait for phones. Same night circus big top interior as a tall view: striped crimson and cream canopy at the top, tall deep royal-blue and purple air with soft warm spotlight beams, strings of tiny warm lights, audience silhouettes low down, dark floor band at the bottom. Calm, fairly empty middle (gameplay happens there). NO trapezes, NO bars, NO hoops, NO rings, NO characters, NO safety net, NO text. No outlines. Muted so gold and red-orange gameplay objects pop on top of it."
+  }
+]

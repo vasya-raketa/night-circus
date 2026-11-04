@@ -1,0 +1,1 @@
+single object, centered, side view, on a flat pure #00FF00 green background (I will remove it), no shadow on the ground, no text, no frame, even lighting, 2048x2048.

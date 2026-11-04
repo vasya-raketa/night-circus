@@ -295,7 +295,13 @@
     "spotYJitter": 0.12,
     "spotPhaseStep": 2,
     "bandCount": 7,
-    "bandAlpha": 0.18
+    "bandAlpha": 0.18,
+    "images": {
+      "wide": "art/bg_wide.jpg",
+      "tall": "art/bg_tall.jpg"
+    },
+    "imageParallax": 0.2,
+    "imageDim": 0.18
   },
   "colors": {
     "background": "#1E2A6B",
@@ -762,7 +768,8 @@
     "showZones": false,
     "frequency": 0.6,
     "difficulty": 0.5,
-    "slowMoScale": 0.5
+    "slowMoScale": 0.5,
+    "paintedBg": true
   },
   "objects": {
     "staticBar": {},

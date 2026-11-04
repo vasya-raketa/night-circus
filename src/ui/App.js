@@ -101,6 +101,7 @@ export default class App {
       check('Slow motion 0.5x', 'slowMo'),
       check('Always show the arc', 'alwaysArc'),
       check('Show catch / hit zones', 'showZones'),
+      check('Painted background (generated art)', 'paintedBg'),
       slider('Obstacle frequency (sandbox)', 'frequency'),
       slider('Difficulty', 'difficulty'),
       el('div', { className: 'row' }, sandboxBtn, el('button', { textContent: 'Copy my ratings', onclick: () => this.copyRatings() }))

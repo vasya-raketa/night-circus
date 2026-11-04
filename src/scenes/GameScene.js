@@ -311,7 +311,7 @@ export default class GameScene extends ArcadeScene {
 
     // World backdrop.
     const wv = this.worldView;
-    wv.draw(view, { bars: [], hazards: [], stars: [], platform: this.platform }, simDt);
+    wv.draw(view, { bars: [], hazards: [], stars: [], platform: this.platform, ceiling: !this.settings.paintedBg }, simDt);
 
     this.objG.clear();
     for (const o of w.objects) o.draw(ctx);

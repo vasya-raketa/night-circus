@@ -1,18 +1,51 @@
 import Phaser from 'phaser';
 import { createPalette } from '../render/palette.js';
 
-// Screen-space backdrop: dark blue tent with soft drifting spotlights that
-// scroll with a little parallax against the game camera.
+// Screen-space backdrop. Painted: the generated tent image (wide on landscape, tall on portrait),
+// scaled to the screen height and scrolled with parallax; alternate copies are mirrored so the
+// repeats meet without a seam. Otherwise (Playground toggle): dark blue tent with soft drifting
+// spotlights drawn with shapes.
 export default class BackgroundScene extends Phaser.Scene {
   constructor() {
     super({ key: 'Background', active: true });
   }
 
+  preload() {
+    const imgs = this.registry.get('tuning').background.images;
+    for (const [key, url] of Object.entries(imgs)) this.load.image(`bg_${key}`, url);
+  }
+
   create() {
     this.tuning = this.registry.get('tuning');
     this.palette = createPalette(this.tuning.colors);
+    this.tiles = [];
     this.g = this.add.graphics();
+    this.g.setDepth(1);
     this.time0 = 0;
+  }
+
+  get painted() {
+    return this.registry.get('session')?.settings.paintedBg !== false;
+  }
+
+  // Positions mirrored copies of the image across the screen; returns false if it is not loaded.
+  drawImage(w, h, scroll) {
+    const key = w >= h ? 'bg_wide' : 'bg_tall';
+    if (!this.textures.exists(key)) return false;
+    const src = this.textures.get(key).getSourceImage();
+    const scale = Math.max(h / src.height, w / src.width);
+    const tw = src.width * scale;
+    const offset = scroll * this.tuning.background.imageParallax;
+    const first = Math.floor(offset / tw);
+    const count = Math.ceil(w / tw) + 1;
+    while (this.tiles.length < count) this.tiles.push(this.add.image(0, 0, key).setOrigin(0, 0).setDepth(0));
+    this.tiles.forEach((img, i) => {
+      if (i >= count) return img.setVisible(false);
+      const k = first + i;
+      img.setTexture(key).setVisible(true).setScale(scale).setFlipX(k % 2 !== 0);
+      img.setPosition(k * tw - offset, (h - src.height * scale) / 2);
+    });
+    return true;
   }
 
   update(_time, delta) {
@@ -28,6 +61,13 @@ export default class BackgroundScene extends Phaser.Scene {
     this.time0 += delta / 1000;
 
     g.clear();
+    if (this.painted && this.drawImage(w, h, scroll)) {
+      // A light wash of the tent blue keeps gameplay objects on top easy to read.
+      g.fillStyle(p.background, b.imageDim);
+      g.fillRect(0, 0, w, h);
+      return;
+    }
+    for (const img of this.tiles) img.setVisible(false);
     g.fillStyle(p.background, 1);
     g.fillRect(0, 0, w, h);
 

@@ -20,7 +20,7 @@ export default class WorldRenderer {
   draw(view, world, dt) {
     const g = this.g;
     g.clear();
-    this.drawCeiling(view);
+    if (world.ceiling !== false) this.drawCeiling(view);
     if (world.platform) this.drawPlatform(world.platform);
     for (const h of world.hazards) {
       if (h.type === 'sandbag') this.drawSandbag(h);
